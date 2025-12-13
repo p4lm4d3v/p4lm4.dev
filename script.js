@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Typewriter Effect
   const typingText = document.getElementById("typing-text");
   const phrases = [
-    "Software Engineer",
-    "Robotics Engineer",
-    "Computer Engineer",
-    "Electrical Engineer",
-    "Mechanical Engineer",
+    "Software",
+    "Robotics",
+    "Computer",
+    "Electrical",
+    "Mechanical",
   ];
   let phraseIndex = 0;
   let charIndex = 0;
