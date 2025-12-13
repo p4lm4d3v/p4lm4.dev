@@ -138,12 +138,13 @@ code {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 0.25rem;
+    margin-top: 0.75rem;
 }
 
 .terminal-dots {
     display: flex;
     gap: 0.5rem;
+    margin-left: 0.75rem;
 }
 
 .dot {
@@ -160,6 +161,7 @@ code {
     font-family: var(--font-mono);
     font-size: 0.8rem;
     color: var(--text-secondary);
+    margin-right: 0.75rem;
 }
 
 .terminal-content {
@@ -587,7 +589,7 @@ footer {
 /* Footer Divider */
 .footer-divider {
     position: relative;
-    margin: var(--spacing-lg) 0;
+    margin-bottom:  var(--spacing-lg);
     display: flex;
     align-items: center;
     justify-content: center;
