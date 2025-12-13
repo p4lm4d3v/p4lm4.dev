@@ -56,13 +56,6 @@
             </ul>
           </nav>
 
-          <div class="nav-right">
-            <a href="#contact" class="btn-contact">
-              <span class="btn-text">contact me</span>
-              <span class="btn-icon"><i class="fas fa-terminal"></i></span>
-            </a>
-          </div>
-
           <!-- Mobile menu toggle -->
           <div class="mobile-menu-btn">
             <span class="menu-bar"></span>
@@ -127,445 +120,36 @@
                 </div>
                 <div class="code-body">
             
-<pre><code class="rust"><span class="code-keyword">enum</span> Engineering {
-    Electrical,
-    Software, 
-    Mechanical,  
-    Computer, 
-}
+<pre><code class="rust"><span class="code-red">enum</span> Engineering <span class="code-function">{</span>
+    Electrical<span class="code-white">,</span>
+    Software<span class="code-white">,</span> 
+    Mechanical<span class="code-white">,</span>  
+    Computer<span class="code-white">,</span> 
+<span class="code-function">}</span>
 
 <!-- RUST CODE ENGINEER STRUCT -->
-<span class="code-keyword">struct</span> Engineer {
-    engineering: Engineering,
-}
+<span class="code-red">struct</span> Engineer <span class="code-function">{</span>
+    <span class="code-white">engineering</span><span class="code-red">:</span> Engineering<span class="code-white">,</span>
+<span class="code-function">}</span>
 
 <!-- RUST CODE: ENGINEER FUNC IMPL -->
-<span class="code-keyword">impl</span> Engineer {
-    <span class="code-keyword">fn</span> <span class="code-function">new</span>(e: Engineering) -> <span class="code-type">Self</span> {
-        <span class="code-type">Self</span> { engineering: e }
-    }
-}
+<span class="code-red">impl</span> Engineer <span class="code-function">{</span>
+    <span class="code-red">fn</span> new<span class="code-string">(</span><span class="code-white">e</span><span class="code-red">:</span> Engineering<span class="code-string">)</span> <span class="code-red">-></span> <span class="code-function">Self</span> <span class="code-string">}</span>
+        <span class="code-function">Self</span> { <span class="code-white">engineering</span><span class="code-red">:</span> <span class="code-white">e</span> }
+    <span class="code-string">}</span>
+<span class="code-function">}</span>
 
 <!-- RUST CODE: MAIN FUNC -->
-<span class="code-keyword">fn</span> <span class="code-function">main</span>() {
-    <span class="code-keyword">let</span> me = Engineer::<span class="code-function">new</span>(
-        Engineering::Software & Engineering::Computer
-        Engineering::Electrical & Engineering::Mechanical
-    );
-}
+<span class="code-red">fn</span> main<span class="code-function">() {</span>
+    <span class="code-red">let</span> me <span class="code-red">=</span> Engineer<span class="code-red">::</span>new<span class="code-function">(</span>
+        Engineering<span class="code-red">::</span>Software <span class="code-red">&</span> Engineering<span class="code-red">::</span>Computer
+        Engineering<span class="code-red">::</span>Electrical <span class="code-red">&</span> Engineering<span class="code-red">::</span>Mechanical
+    <span class="code-string">)</span><span class="code-white">;</span>
+<span class="code-function">}</span>
 </code></pre>
 
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Skills Section -->
-      <section id="skills" class="section skills">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">
-              <span class="section-icon"><i class="fas fa-cogs"></i></span>
-              <span class="section-text">skills & technologies</span>
-            </h2>
-            <p class="section-subtitle">
-              <span class="prompt">$</span> Tools and technologies I work with daily
-            </p>
-          </div>
-          
-          <div class="skills-grid">
-            <div class="skill-category">
-              <h3 class="category-title">
-                <span class="category-icon"><i class="fas fa-code"></i></span>
-                frontend
-              </h3>
-              <div class="skill-list">
-                <div class="skill-item">
-                  <span class="skill-name">HTML5/CSS3</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="95"></div>
-                  </div>
-                  <code class="skill-percent">95%</code>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">JavaScript</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="90"></div>
-                  </div>
-                  <code class="skill-percent">90%</code>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">React</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="85"></div>
-                  </div>
-                  <code class="skill-percent">85%</code>
-                </div>
-              </div>
-            </div>
-            
-            <div class="skill-category">
-              <h3 class="category-title">
-                <span class="category-icon"><i class="fas fa-server"></i></span>
-                backend
-              </h3>
-              <div class="skill-list">
-                <div class="skill-item">
-                  <span class="skill-name">Node.js</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="88"></div>
-                  </div>
-                  <code class="skill-percent">88%</code>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Python</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="80"></div>
-                  </div>
-                  <code class="skill-percent">80%</code>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Databases</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="82"></div>
-                  </div>
-                  <code class="skill-percent">82%</code>
-                </div>
-              </div>
-            </div>
-            
-            <div class="skill-category">
-              <h3 class="category-title">
-                <span class="category-icon"><i class="fas fa-tools"></i></span>
-                tools
-              </h3>
-              <div class="skill-list">
-                <div class="skill-item">
-                  <span class="skill-name">Git</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="92"></div>
-                  </div>
-                  <code class="skill-percent">92%</code>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Docker</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="75"></div>
-                  </div>
-                  <code class="skill-percent">75%</code>
-                </div>
-                <div class="skill-item">
-                  <span class="skill-name">Linux</span>
-                  <div class="skill-bar">
-                    <div class="skill-level" data-level="85"></div>
-                  </div>
-                  <code class="skill-percent">85%</code>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects Section -->
-      <section id="projects" class="section projects">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">
-              <span class="section-icon"><i class="fas fa-project-diagram"></i></span>
-              <span class="section-text">recent projects</span>
-            </h2>
-            <p class="section-subtitle">
-              <span class="prompt">$</span> Code that solves real problems
-            </p>
-          </div>
-          
-          <div class="projects-grid">
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">Algorithm Visualizer</h3>
-                <div class="project-tags">
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">Canvas API</span>
-                  <span class="tag">React</span>
-                </div>
-              </div>
-              <div class="project-body">
-                <p class="project-description">
-                  Interactive tool that visualizes sorting and pathfinding algorithms with step-by-step execution.
-                </p>
-                <div class="project-tech">
-                  <code><i class="fas fa-code"></i> 2.5k lines</code>
-                  <code><i class="fas fa-history"></i> 2023</code>
-                </div>
-              </div>
-              <div class="project-footer">
-                <a href="#" class="project-link">
-                  <span class="link-icon"><i class="fas fa-external-link-alt"></i></span>
-                  <span class="link-text">view project</span>
-                </a>
-                <a href="#" class="project-link">
-                  <span class="link-icon"><i class="fab fa-github"></i></span>
-                  <span class="link-text">source code</span>
-                </a>
-              </div>
-            </div>
-            
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">CLI Task Manager</h3>
-                <div class="project-tags">
-                  <span class="tag">Node.js</span>
-                  <span class="tag">CLI</span>
-                  <span class="tag">SQLite</span>
-                </div>
-              </div>
-              <div class="project-body">
-                <p class="project-description">
-                  Command-line productivity tool with task tracking, time logging, and progress reporting features.
-                </p>
-                <div class="project-tech">
-                  <code><i class="fas fa-code"></i> 1.8k lines</code>
-                  <code><i class="fas fa-history"></i> 2023</code>
-                </div>
-              </div>
-              <div class="project-footer">
-                <a href="#" class="project-link">
-                  <span class="link-icon"><i class="fas fa-external-link-alt"></i></span>
-                  <span class="link-text">view project</span>
-                </a>
-                <a href="#" class="project-link">
-                  <span class="link-icon"><i class="fab fa-github"></i></span>
-                  <span class="link-text">source code</span>
-                </a>
-              </div>
-            </div>
-            
-            <div class="project-card">
-              <div class="project-header">
-                <h3 class="project-title">Code Snippet Manager</h3>
-                <div class="project-tags">
-                  <span class="tag">Vue.js</span>
-                  <span class="tag">Express</span>
-                  <span class="tag">MongoDB</span>
-                </div>
-              </div>
-              <div class="project-body">
-                <p class="project-description">
-                  Web application for organizing, tagging, and sharing code snippets with syntax highlighting.
-                </p>
-                <div class="project-tech">
-                  <code><i class="fas fa-code"></i> 4.2k lines</code>
-                  <code><i class="fas fa-history"></i> 2022</code>
-                </div>
-              </div>
-              <div class="project-footer">
-                <a href="#" class="project-link">
-                  <span class="link-icon"><i class="fas fa-external-link-alt"></i></span>
-                  <span class="link-text">view project</span>
-                </a>
-                <a href="#" class="project-link">
-                  <span class="link-icon"><i class="fab fa-github"></i></span>
-                  <span class="link-text">source code</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- About Section -->
-      <section id="about" class="section about">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">
-              <span class="section-icon"><i class="fas fa-user"></i></span>
-              <span class="section-text">about me</span>
-            </h2>
-            <p class="section-subtitle">
-              <span class="prompt">$</span> The engineer behind the code
-            </p>
-          </div>
-          
-          <div class="about-content">
-            <div class="about-text">
-              <div class="terminal-window">
-                <div class="terminal-header">
-                  <div class="terminal-dots">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                  </div>
-                  <span class="terminal-title">about_me.txt</span>
-                </div>
-                <div class="terminal-body">
-                  <div class="terminal-line">
-                    <span class="prompt">$</span> whoami
-                  </div>
-                  <div class="terminal-line">
-                    <span class="output">p4lm4d3v</span>
-                  </div>
-                  <div class="terminal-line">
-                    <span class="prompt">$</span> cat about.txt
-                  </div>
-                  <div class="terminal-line">
-                    <span class="output">
-                      I'm a passionate engineer/developer with a focus on creating efficient, 
-                      scalable solutions. I enjoy solving complex problems and turning ideas 
-                      into clean, maintainable code.
-                    </span>
-                  </div>
-                  <div class="terminal-line">
-                    <span class="prompt">$</span> find /interests -name "*"
-                  </div>
-                  <div class="terminal-line">
-                    <span class="output">
-                      algorithm challenges • open source • system design • mentoring • coffee
-                    </span>
-                  </div>
-                  <div class="terminal-line">
-                    <span class="prompt">$</span> <span class="blink">█</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="about-stats">
-              <div class="stat-card">
-                <div class="stat-icon">
-                  <i class="fas fa-calendar-alt"></i>
-                </div>
-                <div class="stat-content">
-                  <h3 class="stat-number">5+</h3>
-                  <p class="stat-label">Years Experience</p>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-icon">
-                  <i class="fas fa-code-branch"></i>
-                </div>
-                <div class="stat-content">
-                  <h3 class="stat-number">120+</h3>
-                  <p class="stat-label">Projects Completed</p>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-icon">
-                  <i class="fas fa-coffee"></i>
-                </div>
-                <div class="stat-content">
-                  <h3 class="stat-number">∞</h3>
-                  <p class="stat-label">Cups of Coffee</p>
-                </div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-icon">
-                  <i class="fas fa-book"></i>
-                </div>
-                <div class="stat-content">
-                  <h3 class="stat-number">25+</h3>
-                  <p class="stat-label">Technologies Learned</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="section contact">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">
-              <span class="section-icon"><i class="fas fa-envelope"></i></span>
-              <span class="section-text">get in touch</span>
-            </h2>
-            <p class="section-subtitle">
-              <span class="prompt">$</span> Let's build something amazing together
-            </p>
-          </div>
-          
-          <div class="contact-content">
-            <div class="contact-info">
-              <div class="contact-card">
-                <h3 class="contact-title">
-                  <span class="contact-icon"><i class="fas fa-terminal"></i></span>
-                  contact info
-                </h3>
-                <div class="contact-details">
-                  <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div class="contact-text">
-                      <span class="contact-label">email</span>
-                      <code class="contact-value">hello@p4lm4d3v.dev</code>
-                    </div>
-                  </div>
-                  <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div class="contact-text">
-                      <span class="contact-label">phone</span>
-                      <code class="contact-value">+1 (555) DEV-CODE</code>
-                    </div>
-                  </div>
-                  <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div class="contact-text">
-                      <span class="contact-label">location</span>
-                      <code class="contact-value">Digital Nomad</code>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="social-links">
-                <a href="#" class="social-link">
-                  <i class="fab fa-github"></i>
-                  <span class="social-text">GitHub</span>
-                </a>
-                <a href="#" class="social-link">
-                  <i class="fab fa-linkedin"></i>
-                  <span class="social-text">LinkedIn</span>
-                </a>
-                <a href="#" class="social-link">
-                  <i class="fab fa-twitter"></i>
-                  <span class="social-text">Twitter</span>
-                </a>
-                <a href="#" class="social-link">
-                  <i class="fab fa-codepen"></i>
-                  <span class="social-text">CodePen</span>
-                </a>
-              </div>
-            </div>
-            
-            <div class="contact-form">
-              <form id="contactForm">
-                <div class="form-group">
-                  <label for="name" class="form-label">
-                    <span class="form-icon"><i class="fas fa-user"></i></span>
-                    name
-                  </label>
-                  <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
-                </div>
-                <div class="form-group">
-                  <label for="email" class="form-label">
-                    <span class="form-icon"><i class="fas fa-envelope"></i></span>
-                    email
-                  </label>
-                  <input type="email" id="email" class="form-input" placeholder="your@email.com" required>
-                </div>
-                <div class="form-group">
-                  <label for="message" class="form-label">
-                    <span class="form-icon"><i class="fas fa-comment-alt"></i></span>
-                    message
-                  </label>
-                  <textarea id="message" class="form-textarea" rows="5" placeholder="Your message here..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                  <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                  <span class="btn-text">send message</span>
-                </button>
-              </form>
             </div>
           </div>
         </div>
@@ -655,7 +239,7 @@
         <div class="footer-bottom">
           <div class="copyright">
             <span class="prompt">$</span> 
-            <code>© 2024 p4lm4d3v. all systems operational.</code>
+            <code>© 2025 p4lm4d3v. all systems operational.</code>
           </div>
           <div class="footer-extra">
             <span class="extra-text">

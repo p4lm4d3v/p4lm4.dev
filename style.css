@@ -74,6 +74,11 @@ body {
     padding: 0 var(--spacing-sm);
 }
 
+a {
+  text-decoration: none;
+}
+
+
 /* Typography */
 h1, h2, h3, h4 {
     font-family: var(--font-mono);
@@ -439,6 +444,8 @@ header {
 .code-function { color: var(--terminal-blue); }
 .code-number { color: var(--terminal-yellow); }
 .code-type { color: var(--terminal-blue); }
+.code-red { color: var(--terminal-red)}
+.code-white { color: white; }
 
 /* Section Styles */
 .section {
