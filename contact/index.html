@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>p4lm4d3v | contact</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+    />
+   </head>
+  <body>
+    <!-- Terminal-style notification -->
+    <div class="terminal-notification">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span class="terminal-title">terminal@p4lm4dev:~/contact</span>
+      </div>
+      <div class="terminal-content">
+        <span class="prompt">$</span> Ready to connect...
+        <span class="blink">█</span>
+      </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header>
+      <div class="container">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="/" class="logo">
+                <span class="logo-text">
+                  <span class="accent">p4lm4d3v</span>
+                </span>
+              <span class="logo-cursor">_</span>
+            </a>
+          </div>
+
+          <nav class="navbar">
+            <ul class="nav-menu">
+              <li><a href="/" class="nav-link">home</a></li>
+              <li class="separator">|</li>
+              <li><a href="/services/" class="nav-link">services</a></li>
+              <li class="separator">|</li>
+              <li><a href="/projects/" class="nav-link">projects</a></li>
+              <li class="separator">|</li>
+              <li><a href="/skills/" class="nav-link">skills</a></li>
+              <li class="separator">|</li>
+              <li><a href="/contact/" class="nav-link active">contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Mobile menu toggle -->
+          <div class="mobile-menu-btn">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="contacts-section">
+        <div class="container">
+          <div class="contact-container">
+            <!-- Header -->
+            <div class="contact-header">
+              <h1><span class="prompt">&gt;</span> get in touch</h1>
+              <p>send a message or connect through other channels</p>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+              <form id="contactForm">
+                <div class="form-group">
+                  <label for="name" class="form-label">name</label>
+                  <input 
+                    type="text" 
+                    id="name" 
+                    name="name" 
+                    class="form-input" 
+                    placeholder="your name"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="email" class="form-label">email</label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-input" 
+                    placeholder="your@email.com"
+                    required
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="message" class="form-label">message</label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    class="form-textarea" 
+                    placeholder="what's on your mind?"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                    send message
+                  </button>
+                  <button type="reset" class="btn btn-outline">
+                    <i class="fas fa-redo"></i>
+                    clear
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links-section">
+              <h3 class="social-title">
+                <span class="prompt">$</span> connect elsewhere
+              </h3>
+              
+              <div class="social-grid">
+                <a href="mailto:contact@p4lm4dev.com" class="social-link">
+                  <i class="fas fa-envelope social-icon"></i>
+                  <span>email</span>
+                </a>
+                
+                <a href="https://github.com/p4lm4d3v" target="_blank" class="social-link">
+                  <i class="fab fa-github social-icon"></i>
+                  <span>github</span>
+                </a>
+                
+                <a href="https://linkedin.com/in/MatejaDjokic" target="_blank" class="social-link">
+                  <i class="fab fa-linkedin social-icon"></i>
+                  <span>linkedin</span>
+                </a>
+                
+                <a href="https://leetcode.com/p4lm4d3v" target="_blank" class="social-link">
+                  <i class="fas fa-code social-icon"></i>
+                  <span>leetcode</span>
+                </a>
+                
+                <a href="https://instagram.com/p4lm4d3v" target="_blank" class="social-link">
+                  <i class="fab fa-instagram social-icon"></i>
+                  <span>instagram</span>
+                </a>
+                
+                <a href="https://twitter.com/p4lm4d3v" target="_blank" class="social-link">
+                  <i class="fab fa-twitter social-icon"></i>
+                  <span>twitter</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuBtn) {
+          mobileMenuBtn.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+          });
+        }
+
+        // Terminal notification
+        setTimeout(() => {
+          const terminalNotification = document.querySelector('.terminal-notification');
+          if (terminalNotification) {
+            terminalNotification.classList.add('show');
+            setTimeout(() => {
+              terminalNotification.classList.remove('show');
+            }, 2000);
+          }
+        }, 500);
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+          contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalHtml = submitBtn.innerHTML;
+            
+            // Show sending state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> sending...';
+            submitBtn.disabled = true;
+            
+            // Simulate sending
+            setTimeout(() => {
+              // Success state
+              submitBtn.innerHTML = '<i class="fas fa-check"></i> sent';
+              submitBtn.style.background = '#27ca3f';
+              
+              // Reset form after 2 seconds
+              setTimeout(() => {
+                contactForm.reset();
+                submitBtn.innerHTML = originalHtml;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+              }, 2000);
+            }, 1500);
+          });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (mobileMenuBtn && navMenu && 
+              !mobileMenuBtn.contains(e.target) && 
+              !navMenu.contains(e.target) &&
+              navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
