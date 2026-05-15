@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>p4lm4d3v | contact</title>
+    <title>mateja djokic | contact</title>
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="contact.css" />
     <link rel="icon" href="assets/icon.ico" type="image/x-icon">
@@ -17,22 +17,6 @@
     />
    </head>
   <body>
-    <!-- Terminal-style notification -->
-    <div class="terminal-notification">
-      <div class="terminal-header">
-        <div class="terminal-dots">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
-        <span class="terminal-title">terminal@p4lm4dev:~/contact</span>
-      </div>
-      <div class="terminal-content">
-        <span class="prompt">$</span> Ready to connect...
-        <span class="blink">█</span>
-      </div>
-    </div>
-
     <!-- Main Navigation -->
     <header>
       <div class="container">
@@ -40,7 +24,7 @@
           <div class="brand">
             <a href="/" class="logo">
                 <span class="logo-text">
-                  <span class="accent">p4lm4d3v</span>
+                  <span class="accent">mateja djokic</span>
                 </span>
               <span class="logo-cursor">_</span>
             </a>
@@ -86,11 +70,11 @@
               <form id="contactForm">
                 <div class="form-group">
                   <label for="name" class="form-label">name</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    name="name" 
-                    class="form-input" 
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
                     placeholder="your name"
                     required
                   >
@@ -98,11 +82,11 @@
 
                 <div class="form-group">
                   <label for="email" class="form-label">email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    name="email" 
-                    class="form-input" 
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
                     placeholder="your@email.com"
                     required
                   >
@@ -110,10 +94,10 @@
 
                 <div class="form-group">
                   <label for="message" class="form-label">message</label>
-                  <textarea 
-                    id="message" 
-                    name="message" 
-                    class="form-textarea" 
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-textarea"
                     placeholder="what's on your mind?"
                     required
                   ></textarea>
@@ -137,33 +121,33 @@
               <h3 class="social-title">
                 <span class="prompt">$</span> connect elsewhere
               </h3>
-              
+
               <div class="social-grid">
                 <a href="mailto:contact@p4lm4dev.com" class="social-link">
                   <i class="fas fa-envelope social-icon"></i>
                   <span>email</span>
                 </a>
-                
+
                 <a href="https://github.com/p4lm4d3v" target="_blank" class="social-link">
                   <i class="fab fa-github social-icon"></i>
                   <span>github</span>
                 </a>
-                
+
                 <a href="https://linkedin.com/in/MatejaDjokic" target="_blank" class="social-link">
                   <i class="fab fa-linkedin social-icon"></i>
                   <span>linkedin</span>
                 </a>
-                
+
                 <a href="https://leetcode.com/p4lm4d3v" target="_blank" class="social-link">
                   <i class="fas fa-code social-icon"></i>
                   <span>leetcode</span>
                 </a>
-                
+
                 <a href="https://instagram.com/p4lm4d3v" target="_blank" class="social-link">
                   <i class="fab fa-instagram social-icon"></i>
                   <span>instagram</span>
                 </a>
-                
+
                 <a href="https://twitter.com/p4lm4d3v" target="_blank" class="social-link">
                   <i class="fab fa-twitter social-icon"></i>
                   <span>twitter</span>
@@ -174,13 +158,13 @@
         </div>
       </section>
     </main>
-    
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navMenu = document.querySelector('.nav-menu');
-        
+
         if (mobileMenuBtn) {
           mobileMenuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
@@ -204,20 +188,20 @@
         if (contactForm) {
           contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-            
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalHtml = submitBtn.innerHTML;
-            
+
             // Show sending state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> sending...';
             submitBtn.disabled = true;
-            
+
             // Simulate sending
             setTimeout(() => {
               // Success state
               submitBtn.innerHTML = '<i class="fas fa-check"></i> sent';
               submitBtn.style.background = '#27ca3f';
-              
+
               // Reset form after 2 seconds
               setTimeout(() => {
                 contactForm.reset();
@@ -231,8 +215,8 @@
 
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
-          if (mobileMenuBtn && navMenu && 
-              !mobileMenuBtn.contains(e.target) && 
+          if (mobileMenuBtn && navMenu &&
+              !mobileMenuBtn.contains(e.target) &&
               !navMenu.contains(e.target) &&
               navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
