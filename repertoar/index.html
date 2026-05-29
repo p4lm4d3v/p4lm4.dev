@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moj Repertoar</title>
+    <title>Guitar Repertoire</title>
     <style>
         :root {
-            --bg-color: #121214;         /* Clean, neutral near-black */
-            --card-bg: #1a1a1e;          /* Dark charcoal for the song rows */
-            --card-hover: #222227;       /* Slightly lighter gray on hover */
-            --text-color: #e3e3e6;       /* Crisp off-white */
-            --accent-purple: #9d4edd;    /* Vibrant Royal Purple accent */
-            --accent-glow: #7b2cbf;      /* Deeper purple for subtle shadows */
-            --input-bg: #1e1e22;         /* Input background matching the theme */
+            --bg-color: #121214;
+            --card-bg: #1a1a1e;
+            --card-hover: #222227;
+            --text-color: #e3e3e6;
+            --accent-purple: #9d4edd;
+            --input-bg: #1e1e22;
         }
 
         body {
@@ -48,7 +47,6 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            /* Gives the main title a classy, subtle neon glow */
             text-shadow: 0 0 20px rgba(157, 78, 221, 0.4);
         }
 
@@ -65,7 +63,6 @@
             transition: border-color 0.2s, box-shadow 0.2s;
         }
 
-        /* The input pops with purple only when you click into it */
         #search-bar:focus {
             border-color: var(--accent-purple);
             box-shadow: 0 0 10px rgba(123, 44, 191, 0.3);
@@ -98,16 +95,17 @@
             border: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        /* Hover states bring in the purple accents dynamically */
         .song-item-link:hover .song-item {
             border-left-color: var(--accent-purple);
             background-color: var(--card-hover);
-            transform: translateX(3px); /* Subtle nudge right on hover */
+            transform: translateX(3px);
         }
 
         .song-details {
             display: flex;
             align-items: center;
+            flex-wrap: wrap; /* Keeps it clean on small mobile screens */
+            gap: 0 4px;
         }
 
         .author {
@@ -116,13 +114,27 @@
         }
 
         .divider {
-            margin: 0 10px;
-            color: #44444a; /* Muted gray divider */
+            margin: 0 6px;
+            color: #44444a;
             font-weight: 300;
         }
 
         .song-name {
             color: #b5b5bc;
+        }
+
+        /* Capo Badge Styling */
+        .capo-badge {
+            background-color: rgba(157, 78, 221, 0.15);
+            color: var(--accent-purple);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 10px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .link-icon {
@@ -149,13 +161,13 @@
 
     <div class="container">
         <header>
-            <h1>Moj Repertoar</h1>
+            <h1>My Repertoire</h1>
             <input type="text" id="search-bar" placeholder="Search by song or artist..." autocomplete="off">
         </header>
 
         <main>
             <div id="repertoire-list" class="song-list"></div>
-            <div id="empty-state" class="no-results" style="display: none;">Nema pronadjenih pesama.</div>
+            <div id="empty-state" class="no-results" style="display: none;">No matching songs found.</div>
         </main>
     </div>
 
@@ -179,7 +191,8 @@
                             allSongsFlattened.push({
                                 author: author,
                                 song: songObj.title,
-                                link: songObj.link || '#'
+                                link: songObj.link || '#',
+                                capo: songObj.capo || "0" // Default fallback to 0
                             });
                         });
                     }
@@ -214,12 +227,18 @@
                 anchor.target = '_blank';
                 anchor.rel = 'noopener noreferrer';
 
+                // Build the Capo Badge HTML conditionally if capo is anything other than "0" or empty
+                const capoHtml = (item.capo && item.capo !== "0" && item.capo.toLowerCase() !== "no capo")
+                    ? `<span class="capo-badge">Capo ${item.capo}</span>`
+                    : '';
+
                 anchor.innerHTML = `
                     <div class="song-item">
                         <div class="song-details">
                             <span class="author">${item.author}</span>
                             <span class="divider">|</span>
                             <span class="song-name">${item.song}</span>
+                            ${capoHtml}
                         </div>
                         <div class="link-icon">↗</div>
                     </div>

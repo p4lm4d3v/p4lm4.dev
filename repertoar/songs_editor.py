@@ -1,11 +1,9 @@
 import json
 import os
-import time
 
 JSON_FILE = 'songs.json'
 
 def load_data():
-    """Loads the JSON data safely. Creates an empty file if it doesn't exist."""
     if not os.path.exists(JSON_FILE):
         return []
     try:
@@ -16,11 +14,7 @@ def load_data():
         return []
 
 def save_data(data):
-    """Saves data back to JSON, sorted neatly by author name."""
-    # Keep the root authors sorted alphabetically
     data.sort(key=lambda x: x['author'].lower())
-
-    # Sort the song titles inside each author group alphabetically too
     for artist_group in data:
         if 'songs' in artist_group:
             artist_group['songs'].sort(key=lambda x: x['title'].lower())
@@ -30,7 +24,6 @@ def save_data(data):
     print("💾 Changes saved successfully!")
 
 def get_flattened_list(data):
-    """Flattens the structure into a flat list of items for easy indexing."""
     flat_list = []
     for artist_index, artist_group in enumerate(data):
         author = artist_group['author']
@@ -38,7 +31,8 @@ def get_flattened_list(data):
             flat_list.append({
                 'author': author,
                 'title': song_obj['title'],
-                'link': song_obj['link'],
+                'link': song_obj.get('link', ''),
+                'capo': song_obj.get('capo', '0'),
                 'artist_idx': artist_index,
                 'song_idx': song_index
             })
@@ -49,29 +43,31 @@ def add_song(data):
     author_input = input("Enter Artist/Author name: ").strip()
     song_title = input("Enter Song Title: ").strip()
     song_link = input("Enter Link (Tabs, Chords, Video): ").strip()
+    song_capo = input("Enter Capo Fret (e.g. 0 for none, 3, 5): ").strip()
 
     if not author_input or not song_title:
         print("❌ Artist and Song Title cannot be empty!")
         return
 
-    # Look for existing author group (case-insensitive check)
+    # Default capo placeholder to 0 if left blank
+    if not song_capo:
+        song_capo = "0"
+
     target_group = None
     for artist_group in data:
         if artist_group['author'].lower() == author_input.lower():
             target_group = artist_group
             break
 
-    new_song = {"title": song_title, "link": song_link}
+    new_song = {"title": song_title, "link": song_link, "capo": song_capo}
 
     if target_group:
-        # Check if song already exists under this author
         for s in target_group['songs']:
             if s['title'].lower() == song_title.lower():
                 print(f"⚠️ '{song_title}' already exists under {target_group['author']}!")
                 return
         target_group['songs'].append(new_song)
     else:
-        # Create brand new author entry
         data.append({
             "author": author_input,
             "songs": [new_song]
@@ -80,14 +76,14 @@ def add_song(data):
     save_data(data)
 
 def display_all_songs(flat_list):
-    """Prints a numbered layout of all tracks."""
     if not flat_list:
         print("\n📭 Repertoire is currently empty.")
         return False
 
     print(f"\n--- 🎶 Current Repertoire ({len(flat_list)} tracks) ---")
     for idx, item in enumerate(flat_list, start=1):
-        print(f"[{idx}] {item['author']} | {item['title']} -> ({item['link']})")
+        capo_text = f" [Capo {item['capo']}]" if item['capo'] != '0' else ""
+        print(f"[{idx}] {item['author']} | {item['title']}{capo_text} -> ({item['link']})")
     return True
 
 def edit_song(data):
@@ -113,11 +109,14 @@ def edit_song(data):
 
     new_title = input(f"New Title [{selected['title']}]: ").strip()
     new_link = input(f"New Link [{selected['link']}]: ").strip()
+    new_capo = input(f"New Capo Fret [{selected['capo']}]: ").strip()
 
     if new_title:
         song_entry['title'] = new_title
     if new_link:
         song_entry['link'] = new_link
+    if new_capo:
+        song_entry['capo'] = new_capo
 
     save_data(data)
 
@@ -138,10 +137,8 @@ def remove_song(data):
     selected = flat_list[choice - 1]
     artist_entry = data[selected['artist_idx']]
 
-    # Remove the target song item from the original references nested list
     del artist_entry['songs'][selected['song_idx']]
 
-    # Clean up empty authors entirely if no songs are left
     if not artist_entry['songs']:
         data.pop(selected['artist_idx'])
         print(f"Removed empty artist profile for: {selected['author']}")
@@ -178,8 +175,8 @@ def main():
         else:
             print("❌ Input option not recognized. Try again.")
 
+        import time
         time.sleep(1)
-        os.system('cls' if os.name == 'nt' else 'clear')
 
 if __name__ == '__main__':
     main()
