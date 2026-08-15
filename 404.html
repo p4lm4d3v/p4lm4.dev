@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mateja djokic | contact</title>
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="contact.css" />
-    <link rel="icon" href="../assets/icon.ico" type="image/x-icon">
+    <title>mateja djokic | 404</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/icon.ico" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -15,32 +14,83 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;500&display=swap"
     />
-   </head>
+    <style>
+      .not-found {
+        min-height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 0;
+        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      }
+
+      .not-found-window {
+        max-width: 560px;
+        width: 100%;
+        background-color: var(--terminal-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: 0 10px 30px var(--shadow-color);
+      }
+
+      .not-found-body {
+        padding: var(--spacing-lg) var(--spacing-md);
+        font-family: var(--font-mono);
+        line-height: 1.7;
+      }
+
+      .not-found-code {
+        font-size: 3rem;
+        color: var(--terminal-red);
+        font-weight: 700;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .not-found-body p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .not-found-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: var(--spacing-lg);
+      }
+
+      @media (max-width: 768px) {
+        .not-found-actions {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
   <body>
     <!-- Main Navigation -->
     <header>
       <div class="container">
         <div class="nav-container">
           <div class="brand">
-            <a href="../" class="logo">
-                <span class="logo-text">
-                  <span class="accent">mateja djokic</span>
-                </span>
+            <a href="/" class="logo">
+              <span class="logo-text">
+                <span class="accent">mateja djokic</span>
+              </span>
               <span class="logo-cursor">_</span>
             </a>
           </div>
 
           <nav class="navbar">
             <ul class="nav-menu">
-              <li><a href="../" class="nav-link">home</a></li>
+              <li><a href="/" class="nav-link">home</a></li>
               <li class="separator">|</li>
-              <li><a href="../about/" class="nav-link">about</a></li>
+              <li><a href="/about/" class="nav-link">about</a></li>
               <li class="separator">|</li>
-              <li><a href="../projects/" class="nav-link">projects</a></li>
+              <li><a href="/projects/" class="nav-link">projects</a></li>
               <li class="separator">|</li>
-              <li><a href="../skills/" class="nav-link">skills</a></li>
+              <li><a href="/skills/" class="nav-link">skills</a></li>
               <li class="separator">|</li>
-              <li><a href="../contact/" class="nav-link active">contact</a></li>
+              <li><a href="/contact/" class="nav-link">contact</a></li>
             </ul>
           </nav>
 
@@ -62,43 +112,30 @@
 
     <!-- Main Content -->
     <main>
-      <section class="contacts-section">
+      <section class="not-found">
         <div class="container">
-          <div class="contact-container">
-            <!-- Header -->
-            <div class="contact-header">
-              <h1><span class="prompt">&gt;</span> get in touch</h1>
-              <p><span class="prompt">&gt;</span> connect through the channels below</p>
+          <div class="not-found-window">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="code-title">404.sh</span>
             </div>
-
-            <!-- Email CTA -->
-            <div class="contact-cta">
-              <a href="mailto:djokicmateja2006@gmail.com" class="btn btn-primary">
-                <i class="fas fa-envelope"></i>
-                djokicmateja2006@gmail.com
-              </a>
-            </div>
-
-            <!-- Social Links -->
-            <div class="social-links-section">
-              <h3 class="social-title">
-                <span class="prompt">$</span> connect elsewhere
-              </h3>
-
-              <div class="social-grid">
-                <a href="mailto:djokicmateja2006@gmail.com" class="social-link">
-                  <i class="fas fa-envelope social-icon"></i>
-                  <span>email</span>
+            <div class="not-found-body">
+              <div class="not-found-code">404</div>
+              <p><span class="prompt">$</span> ./find --page requested</p>
+              <p><span class="prompt">&gt;</span> error: page not found</p>
+              <p><span class="prompt">&gt;</span> the page you're looking for doesn't exist or was moved.</p>
+              <div class="not-found-actions">
+                <a href="/" class="btn btn-primary">
+                  <i class="fas fa-terminal"></i>
+                  back to home
                 </a>
-
-                <a href="https://github.com/p4lm4d3v" target="_blank" rel="noopener noreferrer" class="social-link">
-                  <i class="fab fa-github social-icon"></i>
-                  <span>github</span>
-                </a>
-
-                <a href="https://linkedin.com/in/MatejaDjokic" target="_blank" rel="noopener noreferrer" class="social-link">
-                  <i class="fab fa-linkedin social-icon"></i>
-                  <span>linkedin</span>
+                <a href="/projects/" class="btn btn-outline">
+                  <i class="fas fa-code"></i>
+                  view projects
                 </a>
               </div>
             </div>
@@ -112,7 +149,7 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <a href="../" class="logo">
+            <a href="/" class="logo">
               <span class="logo-text">
                 <span class="accent">mateja djokic</span>
               </span>
@@ -127,11 +164,11 @@
           <div class="footer-quick-links">
             <h4 class="footer-title"><span class="prompt">&gt;</span> quick links</h4>
             <ul class="footer-menu">
-              <li><a href="../" class="footer-link"><span class="prompt">$</span> home</a></li>
-              <li><a href="../about/" class="footer-link"><span class="prompt">$</span> about</a></li>
-              <li><a href="../projects/" class="footer-link"><span class="prompt">$</span> projects</a></li>
-              <li><a href="../skills/" class="footer-link"><span class="prompt">$</span> skills</a></li>
-              <li><a href="../contact/" class="footer-link"><span class="prompt">$</span> contact</a></li>
+              <li><a href="/" class="footer-link"><span class="prompt">$</span> home</a></li>
+              <li><a href="/about/" class="footer-link"><span class="prompt">$</span> about</a></li>
+              <li><a href="/projects/" class="footer-link"><span class="prompt">$</span> projects</a></li>
+              <li><a href="/skills/" class="footer-link"><span class="prompt">$</span> skills</a></li>
+              <li><a href="/contact/" class="footer-link"><span class="prompt">$</span> contact</a></li>
             </ul>
           </div>
 
@@ -167,6 +204,6 @@
       </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script src="/script.js"></script>
   </body>
 </html>

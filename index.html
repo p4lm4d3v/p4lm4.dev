@@ -21,7 +21,7 @@
       <div class="container">
         <div class="nav-container">
           <div class="brand">
-            <a href="/" class="logo">
+            <a href="./" class="logo">
                 <span class="logo-text">
                   <span class="accent">mateja djokic</span>
                 </span>
@@ -31,20 +31,26 @@
 
           <nav class="navbar">
             <ul class="nav-menu">
-              <li><a href="/" class="nav-link active">home</a></li>
+              <li><a href="./" class="nav-link active">home</a></li>
               <li class="separator">|</li>
-              <li><a href="/services/" class="nav-link">services</a></li>
+              <li><a href="./about/" class="nav-link">about</a></li>
               <li class="separator">|</li>
-              <li><a href="/projects/" class="nav-link">projects</a></li>
+              <li><a href="./projects/" class="nav-link">projects</a></li>
               <li class="separator">|</li>
-              <li><a href="/skills/" class="nav-link">skills</a></li>
+              <li><a href="./skills/" class="nav-link">skills</a></li>
               <li class="separator">|</li>
-              <li><a href="/contact/" class="nav-link">contact</a></li>
+              <li><a href="./contact/" class="nav-link">contact</a></li>
             </ul>
           </nav>
 
           <!-- Mobile menu toggle -->
-          <div class="mobile-menu-btn">
+          <div
+            class="mobile-menu-btn"
+            role="button"
+            tabindex="0"
+            aria-label="toggle navigation"
+            aria-expanded="false"
+          >
             <span class="menu-bar"></span>
             <span class="menu-bar"></span>
             <span class="menu-bar"></span>
@@ -61,10 +67,13 @@
           <div class="hero-content">
             <div class="hero-text">
               <div class="typewriter">
-                <h1 class="hero-title">
-                  <span class="code-line">&gt; </span>
-                  <span class="typing-text" id="typing-text"></span>
-                  <span class="cursor">_</span>
+                <h1
+                  class="hero-title"
+                  aria-label="software, robotics, computer, electrical, mechanical engineer"
+                >
+                  <span class="code-line" aria-hidden="true">&gt; </span>
+                  <span class="typing-text" id="typing-text" aria-hidden="true"></span>
+                  <span class="cursor" aria-hidden="true">_</span>
                 </h1>
               </div>
               <p class="hero-subtitle">
@@ -85,11 +94,11 @@
                 </div>
               </div>
               <div class="hero-actions">
-                <a href="#contact" class="btn btn-primary">
+                <a href="./contact/" class="btn btn-primary">
                   <span class="btn-icon"><i class="fas fa-arrow-up-right-from-square"></i></i></span>
                   <span class="btn-text">get in touch</span>
                 </a>
-                <a href="#projects" class="btn btn-outline">
+                <a href="./projects/" class="btn btn-outline">
                   <span class="btn-icon"><i class="fas fa-code"></i></span>
                   <span class="btn-text">view projects</span>
                 </a>
@@ -107,32 +116,32 @@
                 </div>
                 <div class="code-body">
 
-<pre><code class="rust"><span class="code-red">enum</span> Engineering <span class="code-function">{</span>
-    Electrical<span class="code-white">,</span>
-    Software<span class="code-white">,</span>
-    Mechanical<span class="code-white">,</span>
-    Computer<span class="code-white">,</span>
+<pre><code class="rust"><span class="code-comment">// engineer.rs</span>
+<span class="code-red">struct</span> <span class="code-function">Engineer</span> {
+    <span class="code-white">name</span><span class="code-red">:</span> <span class="code-function">&amp;'static str</span><span class="code-white">,</span>
+    <span class="code-white">skills</span><span class="code-red">:</span> [<span class="code-function">&amp;'static str</span>; <span class="code-string">4</span>]<span class="code-white">,</span>
 <span class="code-function">}</span>
 
-<!-- RUST CODE ENGINEER STRUCT -->
-<span class="code-red">struct</span> Engineer <span class="code-function">{</span>
-    <span class="code-white">engineering</span><span class="code-red">:</span> Engineering<span class="code-white">,</span>
+<span class="code-red">impl</span> <span class="code-function">Engineer</span> {
+    <span class="code-red">fn</span> <span class="code-function">new</span>(<span class="code-white">name</span><span class="code-red">:</span> <span class="code-function">&amp;'static str</span>) <span class="code-red">-&gt;</span> <span class="code-function">Self</span> {
+        <span class="code-function">Self</span> {
+            <span class="code-white">name</span><span class="code-white">,</span>
+            <span class="code-white">skills</span><span class="code-red">:</span> [<span class="code-string">"rust"</span><span class="code-white">,</span> <span class="code-string">"dart"</span><span class="code-white">,</span> <span class="code-string">"python"</span><span class="code-white">,</span> <span class="code-string">"c#"</span>]<span class="code-white">,</span>
+        }
+    }
+
+    <span class="code-red">fn</span> <span class="code-function">build</span>(<span class="code-white">&amp;self</span>) {
+        <span class="code-white">println!</span>(<span class="code-string">"{}: engineer in the making..."</span><span class="code-white">,</span> <span class="code-white">self.name</span>);
+    }
 <span class="code-function">}</span>
 
-<!-- RUST CODE: ENGINEER FUNC IMPL -->
-<span class="code-red">impl</span> Engineer <span class="code-function">{</span>
-    <span class="code-red">fn</span> new<span class="code-string">(</span><span class="code-white">e</span><span class="code-red">:</span> Engineering<span class="code-string">)</span> <span class="code-red">-></span> <span class="code-function">Self</span> <span class="code-string">}</span>
-        <span class="code-function">Self</span> { <span class="code-white">engineering</span><span class="code-red">:</span> <span class="code-white">e</span> }
-    <span class="code-string">}</span>
+<span class="code-red">fn</span> <span class="code-function">main</span>() {
+    <span class="code-red">let</span> <span class="code-white">me</span> <span class="code-red">=</span> <span class="code-function">Engineer</span><span class="code-red">::</span><span class="code-function">new</span>(<span class="code-string">"mateja"</span>)<span class="code-white">;</span>
+    <span class="code-white">me</span>.<span class="code-function">build</span>()<span class="code-white">;</span>
 <span class="code-function">}</span>
 
-<!-- RUST CODE: MAIN FUNC -->
-<span class="code-red">fn</span> main<span class="code-function">() {</span>
-    <span class="code-red">let</span> me <span class="code-red">=</span> Engineer<span class="code-red">::</span>new<span class="code-function">(</span>
-        Engineering<span class="code-red">::</span>Software <span class="code-red">&</span> Engineering<span class="code-red">::</span>Computer
-        Engineering<span class="code-red">::</span>Electrical <span class="code-red">&</span> Engineering<span class="code-red">::</span>Mechanical
-    <span class="code-string">)</span><span class="code-white">;</span>
-<span class="code-function">}</span>
+<span class="code-comment">// $ cargo run</span>
+<span class="code-comment">// mateja: engineer in the making...</span>
 </code></pre>
 
                 </div>
@@ -144,6 +153,65 @@
     </main>
 
 
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="./" class="logo">
+              <span class="logo-text">
+                <span class="accent">mateja djokic</span>
+              </span>
+              <span class="logo-cursor">_</span>
+            </a>
+            <p class="footer-tagline">
+              &gt; electrical &amp; computer engineering student, building the
+              future one project at a time.
+            </p>
+          </div>
+
+          <div class="footer-quick-links">
+            <h4 class="footer-title"><span class="prompt">&gt;</span> quick links</h4>
+            <ul class="footer-menu">
+              <li><a href="./" class="footer-link"><span class="prompt">$</span> home</a></li>
+              <li><a href="./about/" class="footer-link"><span class="prompt">$</span> about</a></li>
+              <li><a href="./projects/" class="footer-link"><span class="prompt">$</span> projects</a></li>
+              <li><a href="./skills/" class="footer-link"><span class="prompt">$</span> skills</a></li>
+              <li><a href="./contact/" class="footer-link"><span class="prompt">$</span> contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4 class="footer-title"><span class="prompt">&gt;</span> connect</h4>
+            <div class="social-links">
+              <a href="mailto:djokicmateja2006@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i> email
+              </a>
+              <a href="https://github.com/p4lm4d3v" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-github"></i> github
+              </a>
+              <a href="https://linkedin.com/in/MatejaDjokic" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin"></i> linkedin
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider">
+          <div class="divider-line"></div>
+          <div class="divider-icon"><i class="fas fa-terminal"></i></div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            <span class="prompt">$</span> <code>mateja djokic</code> — all rights reserved
+          </p>
+          <div class="footer-extra">
+            <span class="extra-text">status: <span class="typed-text" id="footer-status">available</span></span>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>

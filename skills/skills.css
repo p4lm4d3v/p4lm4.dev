@@ -115,13 +115,36 @@
     line-height: 1.3;
 }
 
-/* Practice Section */
-.practice {
-    max-width: 600px;
-    margin: 0 auto var(--spacing-xl);
-    text-align: center;
+/* Staggered entrance animation (like the projects page) */
+.skill {
+    animation: fadeInUp 0.35s ease backwards;
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill:nth-child(1) { animation-delay: 0s; }
+.skill:nth-child(2) { animation-delay: 0.05s; }
+.skill:nth-child(3) { animation-delay: 0.1s; }
+.skill:nth-child(4) { animation-delay: 0.15s; }
+.skill:nth-child(5) { animation-delay: 0.2s; }
+.skill:nth-child(6) { animation-delay: 0.25s; }
+.skill:nth-child(7) { animation-delay: 0.3s; }
+.skill:nth-child(8) { animation-delay: 0.35s; }
+.skill:nth-child(9) { animation-delay: 0.4s; }
+.skill:nth-child(10) { animation-delay: 0.45s; }
+.skill:nth-child(11) { animation-delay: 0.5s; }
+.skill:nth-child(12) { animation-delay: 0.55s; }
+
+/* Small section titles */
 .small-title {
     font-size: 1.2rem;
     color: var(--text-primary);
@@ -131,31 +154,6 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-}
-
-.badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    justify-content: center;
-}
-
-.badge {
-    display: inline-block;
-    padding: 0.35rem 0.9rem;
-    background-color: var(--bg-tertiary);
-    color: var(--accent-secondary);
-    border-radius: 20px;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-}
-
-.badge:hover {
-    background-color: var(--accent-primary);
-    color: white;
-    border-color: var(--accent-primary);
 }
 
 /* Terminal */

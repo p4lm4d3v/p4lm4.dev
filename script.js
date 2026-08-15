@@ -45,33 +45,50 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(typeWriter, 1000);
   }
 
-  // Animate skill bars
-  const skillLevels = document.querySelectorAll(".skill-level");
-  skillLevels.forEach((skill) => {
-    const level = skill.getAttribute("data-level");
-    skill.style.width = level + "%";
-  });
-
   // Mobile menu toggle
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const navMenu = document.querySelector(".nav-menu");
 
+  function closeMobileMenu() {
+    if (!navMenu || !mobileMenuBtn) return;
+    navMenu.classList.remove("active");
+    mobileMenuBtn.classList.remove("active");
+    mobileMenuBtn.setAttribute("aria-expanded", "false");
+  }
+
   if (mobileMenuBtn && navMenu) {
     mobileMenuBtn.addEventListener("click", () => {
-      navMenu.classList.toggle("active");
+      const isOpen = navMenu.classList.toggle("active");
       mobileMenuBtn.classList.toggle("active");
+      mobileMenuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    // Keyboard support (Enter / Space)
+    mobileMenuBtn.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        mobileMenuBtn.click();
+      }
     });
   }
 
   // Close mobile menu when clicking a link
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (navMenu.classList.contains("active")) {
-        navMenu.classList.remove("active");
-        mobileMenuBtn.classList.remove("active");
-      }
-    });
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      navMenu &&
+      mobileMenuBtn &&
+      navMenu.classList.contains("active") &&
+      !navMenu.contains(e.target) &&
+      !mobileMenuBtn.contains(e.target)
+    ) {
+      closeMobileMenu();
+    }
   });
 
   // Projects filter functionality
@@ -81,112 +98,22 @@ document.addEventListener("DOMContentLoaded", function () {
   if (filterTags.length > 0) {
     filterTags.forEach((tag) => {
       tag.addEventListener("click", () => {
-        // Remove active class from all tags
-        filterTags.forEach((t) => t.classList.remove("active"));
-        // Add active class to clicked tag
+        filterTags.forEach((t) => {
+          t.classList.remove("active");
+          t.setAttribute("aria-pressed", "false");
+        });
         tag.classList.add("active");
+        tag.setAttribute("aria-pressed", "true");
 
         const filter = tag.getAttribute("data-filter");
 
-        // Show/hide projects based on filter
         projectCards.forEach((card) => {
           const categories = card.getAttribute("data-category");
-
-          if (filter === "all" || categories.includes(filter)) {
-            card.style.display = "flex";
-            setTimeout(() => {
-              card.style.opacity = "1";
-              card.style.transform = "translateY(0)";
-            }, 10);
-          } else {
-            card.style.opacity = "0";
-            card.style.transform = "translateY(20px)";
-            setTimeout(() => {
-              card.style.display = "none";
-            }, 300);
-          }
+          const matches = filter === "all" || categories.includes(filter);
+          card.classList.toggle("hidden", !matches);
         });
       });
     });
-  }
-
-  // Smooth scrolling for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-
-      // Skip if it's a page link (not an anchor on current page)
-      if (href.includes(".html") && !href.includes("#")) {
-        return;
-      }
-
-      // If it's an anchor on current page
-      if (href.startsWith("#") && href.length > 1) {
-        e.preventDefault();
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: "smooth",
-          });
-        }
-      }
-    });
-  });
-
-  // Contact form submission
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
-
-      // Simple validation
-      if (!data.name || !data.email || !data.message) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      // In a real application, you would send this data to a server
-      console.log("Contact form submitted:", data);
-
-      // Show success message
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.querySelector(".btn-text").textContent;
-      const originalIcon = submitBtn.querySelector(".btn-icon").innerHTML;
-
-      submitBtn.querySelector(".btn-text").textContent = "Message Sent!";
-      submitBtn.querySelector(".btn-icon").innerHTML =
-        '<i class="fas fa-check"></i>';
-      submitBtn.disabled = true;
-
-      // Reset form
-      this.reset();
-
-      // Reset button after 3 seconds
-      setTimeout(() => {
-        submitBtn.querySelector(".btn-text").textContent = originalText;
-        submitBtn.querySelector(".btn-icon").innerHTML = originalIcon;
-        submitBtn.disabled = false;
-      }, 3000);
-    });
-  }
-
-  // Terminal notification auto-hide
-  const terminalNotification = document.querySelector(".terminal-notification");
-  if (terminalNotification) {
-    setTimeout(() => {
-      terminalNotification.style.opacity = "0";
-      terminalNotification.style.transform = "translateY(-20px)";
-      setTimeout(() => {
-        terminalNotification.style.display = "none";
-      }, 500);
-    }, 3000);
   }
 
   // Update footer status
@@ -204,53 +131,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 500);
     }, 5000);
   }
-
-  // Add active class to current page in navigation
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navLinksAll = document.querySelectorAll(".nav-link");
-
-  navLinksAll.forEach((link) => {
-    const linkHref = link.getAttribute("href");
-
-    if (currentPage === "index.html" && linkHref === "index.html") {
-      link.classList.add("active");
-    } else if (currentPage === "skills.html" && linkHref === "skills.html") {
-      link.classList.add("active");
-    } else if (
-      currentPage === "projects.html" &&
-      linkHref === "projects.html"
-    ) {
-      link.classList.add("active");
-    } else if (currentPage === "about.html" && linkHref === "about.html") {
-      link.classList.add("active");
-    }
-  });
-
-  // Add active class to current page in footer
-  const footerLinks = document.querySelectorAll(".footer-link");
-
-  footerLinks.forEach((link) => {
-    const linkHref = link.getAttribute("href");
-
-    if (currentPage === "index.html" && linkHref === "index.html") {
-      link.classList.add("active");
-    } else if (currentPage === "skills.html" && linkHref === "skills.html") {
-      link.classList.add("active");
-    } else if (
-      currentPage === "projects.html" &&
-      linkHref === "projects.html"
-    ) {
-      link.classList.add("active");
-    } else if (currentPage === "about.html" && linkHref === "about.html") {
-      link.classList.add("active");
-    }
-  });
-
-  // Add loading animation to project cards
-  projectCards.forEach((card, index) => {
-    setTimeout(() => {
-      card.style.opacity = "1";
-      card.style.transform = "translateY(0)";
-    }, index * 100);
-  });
 });

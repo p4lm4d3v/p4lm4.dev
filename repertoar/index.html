@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guitar Repertoire</title>
+    <title>mateja djokic | repertoar</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="../assets/icon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+    />
     <style>
         :root {
-            --bg-color: #121214;
-            --card-bg: #1a1a1e;
-            --card-hover: #222227;
-            --text-color: #e3e3e6;
-            --accent-purple: #9d4edd;
-            --input-bg: #1e1e22;
+            --bg-color: #0a0e14;
+            --card-bg: #161b22;
+            --card-hover: #1c2128;
+            --text-color: #c9d1d9;
+            --accent-purple: #7851a9;
+            --input-bg: #0d1117;
         }
 
         body {
@@ -20,8 +30,6 @@
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
         }
 
         .container {
@@ -29,11 +37,12 @@
             max-width: 650px;
             padding: 20px;
             box-sizing: border-box;
+            margin: 0 auto;
         }
 
-        header {
+        .repertoire-header {
             position: sticky;
-            top: 0;
+            top: 70px;
             background-color: var(--bg-color);
             padding: 10px 0 20px 0;
             z-index: 100;
@@ -159,11 +168,54 @@
 </head>
 <body>
 
+    <!-- Main Navigation -->
+    <header>
+      <div class="container">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="../" class="logo">
+              <span class="logo-text">
+                <span class="accent">mateja djokic</span>
+              </span>
+              <span class="logo-cursor">_</span>
+            </a>
+          </div>
+
+          <nav class="navbar">
+            <ul class="nav-menu">
+              <li><a href="../" class="nav-link">home</a></li>
+              <li class="separator">|</li>
+              <li><a href="../about/" class="nav-link">about</a></li>
+              <li class="separator">|</li>
+              <li><a href="../projects/" class="nav-link">projects</a></li>
+              <li class="separator">|</li>
+              <li><a href="../skills/" class="nav-link">skills</a></li>
+              <li class="separator">|</li>
+              <li><a href="../contact/" class="nav-link">contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Mobile menu toggle -->
+          <div
+            class="mobile-menu-btn"
+            role="button"
+            tabindex="0"
+            aria-label="toggle navigation"
+            aria-expanded="false"
+          >
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <div class="container">
-        <header>
+        <div class="repertoire-header">
             <h1>My Repertoire</h1>
             <input type="text" id="search-bar" placeholder="Search by song or artist..." autocomplete="off">
-        </header>
+        </div>
 
         <main>
             <div id="repertoire-list" class="song-list"></div>
@@ -171,6 +223,67 @@
         </main>
     </div>
 
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="../" class="logo">
+              <span class="logo-text">
+                <span class="accent">mateja djokic</span>
+              </span>
+              <span class="logo-cursor">_</span>
+            </a>
+            <p class="footer-tagline">
+              &gt; electrical &amp; computer engineering student, building the
+              future one project at a time.
+            </p>
+          </div>
+
+          <div class="footer-quick-links">
+            <h4 class="footer-title"><span class="prompt">&gt;</span> quick links</h4>
+            <ul class="footer-menu">
+              <li><a href="../" class="footer-link"><span class="prompt">$</span> home</a></li>
+              <li><a href="../about/" class="footer-link"><span class="prompt">$</span> about</a></li>
+              <li><a href="../projects/" class="footer-link"><span class="prompt">$</span> projects</a></li>
+              <li><a href="../skills/" class="footer-link"><span class="prompt">$</span> skills</a></li>
+              <li><a href="../contact/" class="footer-link"><span class="prompt">$</span> contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4 class="footer-title"><span class="prompt">&gt;</span> connect</h4>
+            <div class="social-links">
+              <a href="mailto:djokicmateja2006@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i> email
+              </a>
+              <a href="https://github.com/p4lm4d3v" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-github"></i> github
+              </a>
+              <a href="https://linkedin.com/in/MatejaDjokic" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin"></i> linkedin
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider">
+          <div class="divider-line"></div>
+          <div class="divider-icon"><i class="fas fa-terminal"></i></div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            <span class="prompt">$</span> <code>mateja djokic</code> — all rights reserved
+          </p>
+          <div class="footer-extra">
+            <span class="extra-text">status: <span class="typed-text" id="footer-status">available</span></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
     <script>
         let allSongsFlattened = [];
         const searchBar = document.getElementById('search-bar');

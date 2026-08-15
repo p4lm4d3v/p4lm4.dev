@@ -1,1 +1,262 @@
-<h1>PROJECTS PAGE</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mateja djokic | projects</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="projects.css" />
+    <link rel="icon" href="../assets/icon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&family=Roboto+Mono:wght@300;400;500&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Main Navigation -->
+    <header>
+      <div class="container">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="../" class="logo">
+              <span class="logo-text">
+                <span class="accent">mateja djokic</span>
+              </span>
+              <span class="logo-cursor">_</span>
+            </a>
+          </div>
+
+          <nav class="navbar">
+            <ul class="nav-menu">
+              <li><a href="../" class="nav-link">home</a></li>
+              <li class="separator">|</li>
+              <li><a href="../about/" class="nav-link">about</a></li>
+              <li class="separator">|</li>
+              <li><a href="../projects/" class="nav-link active">projects</a></li>
+              <li class="separator">|</li>
+              <li><a href="../skills/" class="nav-link">skills</a></li>
+              <li class="separator">|</li>
+              <li><a href="../contact/" class="nav-link">contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Mobile menu toggle -->
+          <div
+            class="mobile-menu-btn"
+            role="button"
+            tabindex="0"
+            aria-label="toggle navigation"
+            aria-expanded="false"
+          >
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="projects">
+        <div class="container">
+          <div class="header">
+            <h1 class="title"><span class="prompt">$</span> projects</h1>
+            <p class="subtitle">
+              <span class="prompt">></span> a selection of things I've built
+            </p>
+          </div>
+
+          <!-- Filter Bar -->
+          <div class="filter-bar">
+            <button class="filter-tag active" data-filter="all" aria-pressed="true">all</button>
+            <button class="filter-tag" data-filter="python" aria-pressed="false">python</button>
+            <button class="filter-tag" data-filter="rust" aria-pressed="false">rust</button>
+            <button class="filter-tag" data-filter="csharp" aria-pressed="false">c#</button>
+            <button class="filter-tag" data-filter="dart" aria-pressed="false">dart</button>
+            <button class="filter-tag" data-filter="dotnet" aria-pressed="false">.net</button>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects-grid">
+            <div class="project-card" data-category="python">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> ORT Studio</h2>
+                <span class="project-tech">python</span>
+              </div>
+              <p class="project-description">
+                A study tool for the ORT 1 course at ETF: automatic generation of
+                truth tables and Karnaugh maps, CSV import/export and a dark-mode
+                UI; used by classmates before exams.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="rust">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> plm-iv</h2>
+                <span class="project-tech">rust</span>
+              </div>
+              <p class="project-description">
+                A lightweight and fast image viewer, built as a proof of concept
+                of my Rust skills.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="rust">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> Indexed Square Root Algorithm</h2>
+                <span class="project-tech">rust</span>
+              </div>
+              <p class="project-description">
+                An original algorithm for approximating square roots, designed at
+                age 16; implemented, documented and benchmarked against the
+                standard <code>f64::sqrt</code>.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="rust csharp python">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> AoC</h2>
+                <span class="project-tech">rust · c# · python</span>
+              </div>
+              <p class="project-description">
+                Regular solutions through Advent of Code 2015/2024/2025.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="rust csharp python">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> LeetCode</h2>
+                <span class="project-tech">rust · c# · python</span>
+              </div>
+              <p class="project-description">
+                A collection of LeetCode solutions.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="csharp">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> Petlja</h2>
+                <span class="project-tech">c#</span>
+              </div>
+              <p class="project-description">
+                Numerous problems solved from Petlja.org.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="dart">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> Nize</h2>
+                <span class="project-tech">dart</span>
+              </div>
+              <p class="project-description">
+                A published Flutter library providing colors, palettes and
+                gradients.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="csharp">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> PlmLibs</h2>
+                <span class="project-tech">c#</span>
+              </div>
+              <p class="project-description">
+                A published C# library of helper functions (lists, async, math,
+                dictionaries) that removed everyday boilerplate during high
+                school.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="python">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> Genetic Splicer</h2>
+                <span class="project-tech">python</span>
+              </div>
+              <p class="project-description">
+                A terminal calculator for phenotypes and genotypes, made for
+                biology class.
+              </p>
+            </div>
+
+            <div class="project-card" data-category="csharp dotnet">
+              <div class="project-header">
+                <h2 class="project-title"><span class="prompt">&gt;</span> Slagalica</h2>
+                <span class="project-tech">c# · .net</span>
+              </div>
+              <p class="project-description">
+                A complete implementation of all Slagalica games in a .NET
+                library, built with C#.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a href="../" class="logo">
+              <span class="logo-text">
+                <span class="accent">mateja djokic</span>
+              </span>
+              <span class="logo-cursor">_</span>
+            </a>
+            <p class="footer-tagline">
+              &gt; electrical &amp; computer engineering student, building the
+              future one project at a time.
+            </p>
+          </div>
+
+          <div class="footer-quick-links">
+            <h4 class="footer-title"><span class="prompt">&gt;</span> quick links</h4>
+            <ul class="footer-menu">
+              <li><a href="../" class="footer-link"><span class="prompt">$</span> home</a></li>
+              <li><a href="../about/" class="footer-link"><span class="prompt">$</span> about</a></li>
+              <li><a href="../projects/" class="footer-link"><span class="prompt">$</span> projects</a></li>
+              <li><a href="../skills/" class="footer-link"><span class="prompt">$</span> skills</a></li>
+              <li><a href="../contact/" class="footer-link"><span class="prompt">$</span> contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-social">
+            <h4 class="footer-title"><span class="prompt">&gt;</span> connect</h4>
+            <div class="social-links">
+              <a href="mailto:djokicmateja2006@gmail.com" class="social-link">
+                <i class="fas fa-envelope"></i> email
+              </a>
+              <a href="https://github.com/p4lm4d3v" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-github"></i> github
+              </a>
+              <a href="https://linkedin.com/in/MatejaDjokic" target="_blank" rel="noopener noreferrer" class="social-link">
+                <i class="fab fa-linkedin"></i> linkedin
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider">
+          <div class="divider-line"></div>
+          <div class="divider-icon"><i class="fas fa-terminal"></i></div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            <span class="prompt">$</span> <code>mateja djokic</code> — all rights reserved
+          </p>
+          <div class="footer-extra">
+            <span class="extra-text">status: <span class="typed-text" id="footer-status">available</span></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
